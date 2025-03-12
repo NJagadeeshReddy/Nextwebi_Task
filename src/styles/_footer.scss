@@ -1,0 +1,140 @@
+@import '_mixins.scss';
+
+footer {
+  width: 100%;
+  height: 100%;
+
+  .footer_main {
+      background: #f3f1f1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .tag {
+          margin: 10px 0;
+          
+          .center {
+              text-align: center;
+
+          }
+
+          h3 {
+              font-size: 1.2rem;
+              color: #1c0080;
+              cursor: pointer;
+              word-break: break-all;
+
+              @include for-tablet {
+                  margin-top: 0;
+              }
+
+              @include for-phone {
+                  margin: 0.5rem 0;
+              }
+
+          }
+
+          li {
+              display: block;
+              color: black;
+              text-decoration: none;
+              margin: 9px 0;
+              cursor: pointer;
+
+              &:hover {
+                  color: #c72092;
+              }
+
+              img {
+                  width: 1.4rem;
+              }
+
+              i {
+                  padding: 0 10px;
+                  transition: 0.3;
+
+                  &:hover {
+                      color: #c72092;
+                  }
+              }
+          }
+
+          .social_link {
+              display: flex;
+              flex-wrap: wrap;
+
+              a {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  text-align: center;
+                  text-decoration: none;
+                  color: black;
+                  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+                  position: relative;
+                  margin: 0 5px;
+                  z-index: 10;
+                  overflow: hidden;
+
+                  @include for-phone {
+                      width: 25px;
+                  }
+
+                  img {
+                      margin-top: 0.16rem;
+                      width: 1.8rem;
+                  }
+
+                  &:hover {
+                      transform: translateX(2px);
+                      background: linear-gradient(to right, #c72092, #6c14d0);
+
+                  }
+              }
+          }
+
+          .search_bar {
+              width: 80%;
+              height: 2rem;
+              background: rgb(202, 202, 202);
+              border-radius: 2rem;
+
+              @include for-phone {
+                  width: 60%;
+              }
+
+              input {
+                  padding: 2px 0;
+                  position: relative;
+                  top: 17%;
+                  left: 6%;
+                  border: none;
+                  background: none;
+                  outline: none;
+                  font-size: 13px;
+              }
+
+              button {
+                  padding: 7px 15px;
+                  background: linear-gradient(to right, #c72092, #6c14d0);
+                  border: none;
+                  margin-top: 15px;
+                  border-radius: 25px;
+                  color: white;
+                  cursor: pointer;
+
+              }
+
+              @include for-tablet {
+                  margin-bottom: 2rem;
+              }
+
+              @include for-phone {
+                  margin-bottom: 2rem;
+              }
+          }
+      }
+  }
+
+}
+  

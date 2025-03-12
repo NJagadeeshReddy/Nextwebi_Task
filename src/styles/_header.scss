@@ -1,0 +1,190 @@
+@import "_mixins.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+  justify-content: space-around;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  .logo {
+    font-size: 1.5rem;
+    font-family:'Times New Roman', Times, serif;
+    color: #c72092;
+    margin: 0;
+    cursor: pointer;
+
+    span {
+      color: #6c14d0;
+      text-decoration: underline;
+    }
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+
+    li {
+      display: inline-block;
+      margin: 2px 2px;
+      font-size: 1.1rem;
+
+      a {
+        text-decoration: none;
+        color: black;
+        transition: 0.2s;
+
+        &:hover {
+          color: #c72092;
+        }
+      }
+    }
+  }
+
+  .auth {
+    position: relative;
+
+    .auth-btn {
+      background:none;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+
+      img {
+        margin-top: 0.3rem;
+        height: 1.3rem;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: #c72092;
+        }
+    }
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 120px;
+
+      button,
+      a {
+        text-decoration: none;
+        padding: 10px;
+        color: #333;
+        display: block;
+        background: none;
+        border: none;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #007bff;
+          color: white;
+        }
+      }
+    }
+  }
+  @include for-tablet{
+    flex-direction:column ;
+    flex-wrap: wrap;
+  }
+
+  @include for-phone {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    box-shadow: none;
+    text-align: left;
+
+    nav ul {
+      margin-top: 0.1rem;
+      flex-direction: column;
+      gap: 0;
+
+      li {
+          margin: 0;
+
+          a {
+              font-size: 1rem;
+          }
+      }
+  }
+
+    .auth {
+      margin-top: 1px;
+    }
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .login-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .close-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
